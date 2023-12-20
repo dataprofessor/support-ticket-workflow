@@ -78,3 +78,4 @@ with tabs[0]:
 with tabs[1]:
   st.write('Check the status of your ticket')
   st.dataframe(df, use_container_width=True, hide_index=True)
+  st.write(f'Number of tickets: `{len(df)}`')
