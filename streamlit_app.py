@@ -9,12 +9,13 @@ with tabs[0]:
   st.write('File a new ticket')
 
   with st.form('addition'):
-    a = st.number_input('a')
-    b = st.number_input('b')
-    submit = st.form_submit_button('add')
+    a = st.text_area('Description of issue')
+    b = st.text_input('Cost center')
+    deadline = st.date_input('Deadline', value=None)
+    submit = st.form_submit_button('Submit')
 
   if submit:
-      col2.title(f'{a+b:.2f}')
+      st.write('Ticket submitted!')
 
 with tabs[1]:
   st.write('Check the status of your ticket')
