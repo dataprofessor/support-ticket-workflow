@@ -66,6 +66,7 @@ data = {'Issue': issue_list,
     }
 df = pd.DataFrame(data)
 df = df.sort_values(by='Date', ascending=True)
+df['ID'] = id_values
 # df.insert(0, 'ID', id_values) 
 
 ## Create DataFrame
