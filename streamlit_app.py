@@ -50,7 +50,7 @@ def generate_issue():
 
 ## Function to generate random dates
 def generate_random_dates(start_date, end_date, n=1):
-    date_range = pd.date_range(start_date, end_date).strftime('%Y-%m-%d')
+    date_range = pd.date_range(start_date, end_date).strftime('%m-%d-%Y')
     return np.random.choice(date_range, size=n)
 
 start_date = datetime(2023, 6, 1)
@@ -83,7 +83,7 @@ with tabs[0]:
     submit = st.form_submit_button('Submit')
 
   if submit:
-      today_date = datetime.now().strftime('%Y-%m-%d')
+      today_date = datetime.now().strftime('%m-%d-%Y')
       df2 = pd.DataFrame([{'ID': f'TICKET-{recent_ticket_number+1}',
                            'Issue': issue,
                            'Status': 'Open',
