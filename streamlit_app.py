@@ -75,7 +75,8 @@ if 'df' not in st.session_state:
 # Tabs for app layout
 tabs = st.tabs(['Write a ticket', 'Ticket Status and Analytics'])
 
-recent_ticket_number = int(max(st.session_state.df.ID).split('-')[1])
+# recent_ticket_number = int(max(st.session_state.df.ID).split('-')[1])
+recent_ticket_number = 1099
 
 with tabs[0]:
   st.write('File a new ticket')
