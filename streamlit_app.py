@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title('🎫 Ticket Support Workflow')
+st.title('🎫 Support Ticket Workflow')
 st.info('To write a ticket, fill out the form below. Check status or review ticketing analytics using the tabs below.')
 
 tabs = (['Write a ticket', 'Ticket Status and Analytics'])
