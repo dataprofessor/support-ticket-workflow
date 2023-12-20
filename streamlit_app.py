@@ -55,10 +55,11 @@ def generate_random_dates(start_date, end_date, n=1):
 
 start_date = datetime(2023, 6, 1)
 end_date = datetime(2023, 12, 20)
+id_values = ['TICKET-{}'.format(i) for i in range(1000, 1100)]
 
 ## Generate 100 rows of data
 data = {
-    'ID': ['TICKET-{}'.format(i) for i in range(1000, 1100)],
+    'ID': id_values
     'Issue': [generate_issue() for _ in range(100)],
     'Status': np.random.choice(['Open', 'In Progress', 'Closed'], size=100),
     'Priority': np.random.choice(['High', 'Medium', 'Low'], size=100),
