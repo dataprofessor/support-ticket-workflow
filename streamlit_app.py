@@ -52,6 +52,7 @@ def generate_issue():
 start_date = datetime(2023, 6, 1)
 end_date = datetime(2023, 12, 20)
 id_values = ['TICKET-{}'.format(i) for i in range(1000, 1100)]
+issue_list = [generate_issue() for _ in range(100)]
 
 def generate_random_dates(start_date, end_date, id_values):
     date_range = pd.date_range(start_date, end_date).strftime('%m-%d-%Y')
@@ -60,11 +61,11 @@ def generate_random_dates(start_date, end_date, id_values):
 ## Generate 100 rows of data
 data = {
     'ID': id_values
-    'Issue': [generate_issue() for _ in range(100)],
+    'Issue': issue_list,
     'Status': np.random.choice(['Open', 'In Progress', 'Closed'], size=100),
     'Priority': np.random.choice(['High', 'Medium', 'Low'], size=100),
     'Date': generate_random_dates(start_date, end_date, id_values)
-}
+}e
 
 ## Create DataFrame
 if 'df' not in st.session_state:
