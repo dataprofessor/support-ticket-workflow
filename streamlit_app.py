@@ -96,6 +96,7 @@ with tabs[1]:
                                             ],
                                             required=True,
                                             ),
+                               'Priority': st.column_config.SelectboxColumn(
                                            'Priority',
                                             help='Priority',
                                             width='medium',
