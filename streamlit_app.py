@@ -56,12 +56,13 @@ data = {
 }
 
 ## Create DataFrame
-df = pd.DataFrame(data)
+if 'df' not in st.session_state:
+    st.session_state.df = pd.DataFrame(data)
 
 # Tabs for app layout
 tabs = st.tabs(['Write a ticket', 'Ticket Status and Analytics'])
 
-recent_ticket_number = int(max(df.ID).split('-')[1])
+recent_ticket_number = int(max(st.session_state.df.ID).split('-')[1])
 
 with tabs[0]:
   st.write('File a new ticket')
@@ -78,12 +79,11 @@ with tabs[0]:
                            'Priority': priority}])
       st.write('Ticket submitted!')
       st.dataframe(df2, use_container_width=True, hide_index=True)
-      df_combined = pd.concat([df, df2], axis=0)
+      st.session_state.df = pd.concat([st.session_state.df, df2], axis=0)
 
 with tabs[1]:
   st.write('Check the status of your ticket')
-  df_combined = df.copy()
-  st.data_editor(df_combined, use_container_width=True, hide_index=True, height=385,
+  st.data_editor(st.session_state.df, use_container_width=True, hide_index=True, height=385,
                 column_config={'Status': st.column_config.SelectboxColumn(
                                     'Status',
                                     help='Ticket status',
