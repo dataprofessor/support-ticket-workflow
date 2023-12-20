@@ -65,6 +65,7 @@ data = {'Issue': issue_list,
         'Date': generate_random_dates(start_date, end_date, id_values)
     }
 df = pd.DataFrame(data)
+df = df.sort_values(by='Date', ascending=True)
 df = df.insert(0, 'ID', id_values) 
 
 ## Create DataFrame
