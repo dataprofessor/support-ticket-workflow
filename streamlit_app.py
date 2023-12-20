@@ -70,8 +70,8 @@ with tabs[0]:
     submit = st.form_submit_button('Submit')
 
   if submit:
-      df2 = pd.DataFrame({'Issue': issue,
-                        'Priority': priority})
+      df2 = pd.DataFrame([{'Issue': issue,
+                           'Priority': priority}])
       st.write('Ticket submitted!')
       st.dataframe(df2)
 
