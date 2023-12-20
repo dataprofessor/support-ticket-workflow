@@ -61,7 +61,7 @@ df = pd.DataFrame(data)
 # Tabs for app layout
 tabs = st.tabs(['Write a ticket', 'Ticket Status and Analytics'])
 
-recent_ticket_number = max(df.ID).split('-')[1]
+recent_ticket_number = int(max(df.ID).split('-')[1])
 st.write(recent_ticket_number)
 
 with tabs[0]:
