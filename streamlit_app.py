@@ -50,8 +50,8 @@ def generate_issue():
 
 ## Function to generate random dates
 def generate_random_dates(start_date, end_date, n=1):
-    date_range = pd.date_range(start_date, end_date)
-    return np.random.choice(date_range, size=n).strftime('%Y-%m-%d')
+    date_range = pd.date_range(start_date, end_date).strftime('%Y-%m-%d')
+    return np.random.choice(date_range, size=n)
 
 start_date = datetime(2023, 6, 1)
 end_date = datetime(2023, 12, 20)
