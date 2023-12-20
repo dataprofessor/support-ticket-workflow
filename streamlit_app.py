@@ -73,8 +73,8 @@ with tabs[0]:
       df2 = pd.DataFrame([{'Issue': issue,
                            'Priority': priority}])
       st.write('Ticket submitted!')
-      st.dataframe(df2, use_container_width=True)
+      st.dataframe(df2, use_container_width=True, hide_index=True)
 
 with tabs[1]:
   st.write('Check the status of your ticket')
-  st.dataframe(df, use_container_width=True)
+  st.dataframe(df, use_container_width=True, hide_index=True)
