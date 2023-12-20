@@ -78,10 +78,11 @@ with tabs[0]:
                            'Priority': priority}])
       st.write('Ticket submitted!')
       st.dataframe(df2, use_container_width=True, hide_index=True)
+      df_combined = pd.concat([df, df2], axis=0)
 
 with tabs[1]:
   st.write('Check the status of your ticket')
-  df_combined = pd.concat([df, df2], axis=0)
+  df_combined = df.copy()
   st.data_editor(df_combined, use_container_width=True, hide_index=True, height=385,
                 column_config={'Status': st.column_config.SelectboxColumn(
                                     'Status',
