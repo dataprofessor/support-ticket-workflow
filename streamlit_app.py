@@ -100,7 +100,6 @@ with tabs[1]:
                 column_config={'Status': st.column_config.SelectboxColumn(
                                             'Status',
                                             help='Ticket status',
-                                            width='medium',
                                             options=[
                                                 'Open',
                                                 'In Progress',
@@ -111,7 +110,6 @@ with tabs[1]:
                                'Priority': st.column_config.SelectboxColumn(
                                            'Priority',
                                             help='Priority',
-                                            width='medium',
                                             options=[
                                                 'High',
                                                 'Medium',
