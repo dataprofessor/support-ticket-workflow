@@ -59,7 +59,7 @@ def generate_random_dates(start_date, end_date, id_values):
     return np.random.choice(date_range, size=len(id_values), replace=False)
 
 ## Generate 100 rows of data
-data = {'ID': id_values
+data = {'ID': id_values,
         'Issue': issue_list,
         'Status': np.random.choice(['Open', 'In Progress', 'Closed'], size=100),
         'Priority': np.random.choice(['High', 'Medium', 'Low'], size=100),
