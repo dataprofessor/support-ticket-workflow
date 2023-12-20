@@ -85,16 +85,26 @@ with tabs[1]:
   st.write('Check the status of your ticket')
   st.data_editor(st.session_state.df, use_container_width=True, hide_index=True, height=385,
                 column_config={'Status': st.column_config.SelectboxColumn(
-                                    'Status',
-                                    help='Ticket status',
-                                    width='medium',
-                                    options=[
-                                        'Open',
-                                        'In Progress',
-                                        'Resolved',
-                                        'Closed'
-                                    ],
-                                    required=True,
-                                 )
+                                            'Status',
+                                            help='Ticket status',
+                                            width='medium',
+                                            options=[
+                                                'Open',
+                                                'In Progress',
+                                                'Resolved',
+                                                'Closed'
+                                            ],
+                                            required=True,
+                                            ),
+                                           'Priority',
+                                            help='Priority',
+                                            width='medium',
+                                            options=[
+                                                'High',
+                                                'Medium',
+                                                'Low'
+                                            ],
+                                            required=True,
+                                            ),
                              })
   st.write(f'Number of tickets: `{len(st.session_state.df)}`')
