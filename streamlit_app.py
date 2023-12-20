@@ -1,4 +1,6 @@
 import streamlit as st
+import numpy as np
+import pandas as pd
 
 st.title('🎫 Support Ticket Workflow')
 st.info('To write a ticket, fill out the form below. Check status or review ticketing analytics using the tabs below.')
