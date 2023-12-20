@@ -62,7 +62,6 @@ df = pd.DataFrame(data)
 tabs = st.tabs(['Write a ticket', 'Ticket Status and Analytics'])
 
 recent_ticket_number = int(max(df.ID).split('-')[1])
-st.write(recent_ticket_number)
 
 with tabs[0]:
   st.write('File a new ticket')
