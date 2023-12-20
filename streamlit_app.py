@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
+from datetime import datetime, timedelta
 
 st.title('🎫 Support Ticket Workflow')
 st.info('To write a ticket, fill out the form below. Check status or review ticketing analytics using the tabs below.')
@@ -47,12 +48,21 @@ def generate_issue():
     ]
     return np.random.choice(issues)
 
+## Function to generate random dates
+def generate_random_dates(start_date, end_date, n=1):
+    date_range = pd.date_range(start_date, end_date)
+    return np.random.choice(date_range, size=n)
+
+start_date = datetime(2023, 6, 1)
+end_date = datetime(2023, 12, 20)
+
 ## Generate 100 rows of data
 data = {
     'ID': ['TICKET-{}'.format(i) for i in range(1000, 1100)],
     'Issue': [generate_issue() for _ in range(100)],
     'Status': np.random.choice(['Open', 'In Progress', 'Closed'], size=100),
-    'Priority': np.random.choice(['High', 'Medium', 'Low'], size=100)
+    'Priority': np.random.choice(['High', 'Medium', 'Low'], size=100),
+    'Date': generate_random_dates(start_date, end_date, 100)
 }
 
 ## Create DataFrame
