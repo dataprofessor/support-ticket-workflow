@@ -61,7 +61,7 @@ df = pd.DataFrame(data)
 # Tabs for app layout
 tabs = st.tabs(['Write a ticket', 'Ticket Status and Analytics'])
 
-max(df.ID)
+st.write(max(df.ID))
 
 with tabs[0]:
   st.write('File a new ticket')
