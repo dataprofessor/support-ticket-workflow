@@ -51,7 +51,7 @@ def generate_issue():
 data = {
     'ID': ['TICKET-{}'.format(i) for i in range(1000, 1100)],
     'Issue': [generate_issue() for _ in range(100)],
-    'Status': np.random.choice(['Open', 'In Progress', 'Resolved', 'Closed'], size=100),
+    'Status': np.random.choice(['Open', 'In Progress', 'Closed'], size=100),
     'Priority': np.random.choice(['High', 'Medium', 'Low'], size=100)
 }
 
@@ -91,7 +91,6 @@ with tabs[1]:
                                             options=[
                                                 'Open',
                                                 'In Progress',
-                                                'Resolved',
                                                 'Closed'
                                             ],
                                             required=True,
