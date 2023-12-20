@@ -83,7 +83,7 @@ with tabs[0]:
 
 with tabs[1]:
   st.write('Check the status of your ticket')
-  st.data_editor(st.session_state.df, use_container_width=True, hide_index=True, height=210,
+  st.data_editor(st.session_state.df, use_container_width=True, hide_index=True, height=212,
                 column_config={'Status': st.column_config.SelectboxColumn(
                                             'Status',
                                             help='Ticket status',
