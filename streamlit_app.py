@@ -49,7 +49,7 @@ def generate_issue():
     return np.random.choice(issues)
 
 ## Function to generate random dates
-def generate_random_dates(start_date, end_date, n=1):
+def generate_random_dates(start_date, end_date, id_values):
     date_range = pd.date_range(start_date, end_date).strftime('%m-%d-%Y')
     return np.random.choice(date_range, size=len(id_values), replace=False)
 
