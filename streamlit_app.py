@@ -83,10 +83,13 @@ with tabs[0]:
     submit = st.form_submit_button('Submit')
 
   if submit:
+      today_date = datetime.now().strftime('%Y-%m-%d')
       df2 = pd.DataFrame([{'ID': f'TICKET-{recent_ticket_number+1}',
                            'Issue': issue,
                            'Status': 'Open',
-                           'Priority': priority}])
+                           'Priority': priority,
+                           'Date': today_date
+                          }])
       st.write('Ticket submitted!')
       st.dataframe(df2, use_container_width=True, hide_index=True)
       st.session_state.df = pd.concat([st.session_state.df, df2], axis=0)
