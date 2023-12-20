@@ -51,7 +51,7 @@ def generate_issue():
 ## Function to generate random dates
 def generate_random_dates(start_date, end_date, n=1):
     date_range = pd.date_range(start_date, end_date).strftime('%m-%d-%Y')
-    return np.random.choice(date_range, size=n)
+    return np.random.choice(date_range, size=len(id_values), replace=False)
 
 start_date = datetime(2023, 6, 1)
 end_date = datetime(2023, 12, 20)
@@ -62,7 +62,7 @@ data = {
     'Issue': [generate_issue() for _ in range(100)],
     'Status': np.random.choice(['Open', 'In Progress', 'Closed'], size=100),
     'Priority': np.random.choice(['High', 'Medium', 'Low'], size=100),
-    'Date': generate_random_dates(start_date, end_date, 100)
+    'Date': generate_random_dates(start_date, end_date, id_values)
 }
 
 ## Create DataFrame
