@@ -122,4 +122,4 @@ with tabs[1]:
                                             required=True,
                                             ),
                              })
-  st.write(f'Number of tickets: `{len(st.session_state.df)}`')
+  # st.write(f'Number of tickets: `{len(st.session_state.df)}`')
