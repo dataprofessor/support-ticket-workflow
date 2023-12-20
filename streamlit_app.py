@@ -14,8 +14,8 @@ with tabs[0]:
                         'MKT003 (Marketing)',
                         'FIN004 (Finance)',
                         'OPS005 (Operations)']
-    a = st.text_area('Description of issue')
-    b = st.text_input('Cost center')
+    issue = st.text_area('Description of issue')
+    cost_center_selection = st.selectbox('Cost center', cost_center_list)
     deadline = st.date_input('Deadline', value=None)
     submit = st.form_submit_button('Submit')
 
