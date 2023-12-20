@@ -21,11 +21,11 @@ with tabs[0]:
   st.write('File a new ticket')
 
   with st.form('addition'):
-    cost_center_list = ['HR001 (Human Resources)',
-                        'IT002 (Information Technology)',
-                        'MKT003 (Marketing)',
-                        'FIN004 (Finance)',
-                        'OPS005 (Operations)']
+    cost_center_list = ['HR001 Human Resources',
+                        'IT002 Information Technology',
+                        'MKT003 Marketing',
+                        'FIN004 Finance',
+                        'OPS005 Operations']
     issue = st.text_area('Description of issue')
     cost_center_selection = st.selectbox('Cost center', cost_center_list)
     deadline = st.date_input('Deadline', value=None)
