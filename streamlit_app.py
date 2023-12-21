@@ -138,12 +138,19 @@ with tabs[1]:
   df_status_grouped = df_status.groupby(['Month', 'Status']).size().reset_index(name='Count')
     
   # Create grouped bar chart with Altair
-  status_plot = alt.Chart(df_status_grouped).mark_bar().encode(
-        x='Month:T',
-        y='Count:Q',
-        column='Status:N',
-        color='Status:N'
-  )
+  #status_plot = alt.Chart(df_status_grouped).mark_bar().encode(
+  #      x='Month:T',
+  #      y='Count:Q',
+  #      column='Status:N',
+  #      color='Status:N'
+  #)
+  status_plot = alt.Chart(grouped_data).mark_bar().encode(
+                    x=alt.X('Month:T', axis=alt.Axis(title='Month')),
+                    y='Count:Q',
+                    color='Status:N',
+                    column='Status:N',
+                    tooltip=['Month', 'Status', 'Count'] 
+                 )
   st.altair_chart(status_plot)
   df_status_grouped
   
