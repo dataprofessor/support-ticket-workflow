@@ -141,7 +141,8 @@ with tabs[1]:
   status_plot = alt.Chart(df_status_grouped).mark_bar().encode(
         x='Month:T',
         y='Count:Q',
-        color='Status:N'
+        color='Status:N',
+        xOffset='Status:N'
   )
   st.altair_chart(status_plot)
   df_status_grouped
