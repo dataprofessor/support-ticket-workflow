@@ -105,8 +105,10 @@ with tabs[1]:
   st.write('Check the status of your ticket')
 
   # Status plot
-  col = st.columns(2)
+  col = st.columns((1,4,4))
   with col[0]:
+      st.metrics(label='Hours until first response', value=8, delta=-1)
+  with col[1]:
       status_plot = alt.Chart(st.session_state.df).mark_bar().encode(
           x='month(Date):O',
           y='count():Q',
@@ -114,7 +116,7 @@ with tabs[1]:
           color='Status:N'
       ).properties(height=200)
       st.altair_chart(status_plot, use_container_width=True, theme='streamlit')
-  with col[1]:
+  with col[2]:
       priority_plot = alt.Chart(st.session_state.df).mark_bar().encode(
           x='month(Date):O',
           y='count():Q',
