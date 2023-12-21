@@ -129,7 +129,7 @@ with tabs[1]:
   with status_col[0]:
       st.subheader('Support Ticket Status')
   with status_col[1]:
-      st.write(f'Number of tickets: `{len(st.session_state.df)}`')
+      st.write(f'No. of tickets: `{len(st.session_state.df)}`')
       
   st.data_editor(st.session_state.df, use_container_width=True, hide_index=True, height=212,
                 column_config={'Status': st.column_config.SelectboxColumn(
