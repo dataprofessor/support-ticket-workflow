@@ -68,8 +68,8 @@ data = {'Issue': issue_list,
         'Date': generate_random_dates(start_date, end_date, id_values)
     }
 df = pd.DataFrame(data)
-df = df.sort_values(by='ID', ascending=False)
 df.insert(0, 'ID', id_values)
+df = df.sort_values(by='ID', ascending=False)
 
 ## Create DataFrame
 if 'df' not in st.session_state:
