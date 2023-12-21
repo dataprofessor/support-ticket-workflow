@@ -136,7 +136,7 @@ with tabs[1]:
           xOffset='Status:N',
           color='Status:N'
       )
-      st.altair_chart(status_plot)
+      st.altair_chart(status_plot, use_container_width=True, theme='streamlit')
   with col[1]:
       priority_plot = alt.Chart(st.session_state.df).mark_bar().encode(
           x='month(Date):O',
@@ -144,4 +144,4 @@ with tabs[1]:
           xOffset='Priority:N',
           color='Priority:N'
       )
-      st.altair_chart(priority_plot)
+      st.altair_chart(priority_plot, use_container_width=True, theme='streamlit')
