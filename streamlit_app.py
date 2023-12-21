@@ -125,7 +125,7 @@ with tabs[1]:
       ).properties(height=200)
       st.altair_chart(priority_plot, use_container_width=True, theme='streamlit')
 
-  status_col = st.columns((4,1))
+  status_col = st.columns((5,1))
   with status_col[0]:
       st.subheader('Support Ticket Status')
   with status_col[1]:
