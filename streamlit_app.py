@@ -81,7 +81,7 @@ tabs = st.tabs(['Write a ticket', 'Ticket Status and Analytics'])
 recent_ticket_number = int(max(st.session_state.df.ID).split('-')[1])
 
 with tabs[0]:
-  st.write('File a new ticket')
+  st.warning('File a new ticket')
 
   with st.form('addition'):
     issue = st.text_area('Description of issue')
@@ -101,7 +101,7 @@ with tabs[0]:
       st.session_state.df = pd.concat([st.session_state.df, df2], axis=0).sort_values(by='ID', ascending=False)
 
 with tabs[1]:
-  st.write('Check the status of your ticket')
+  st.warning('Check the status of your ticket')
 
   # Status plot
   col = st.columns((1,4,4))
