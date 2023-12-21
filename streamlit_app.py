@@ -129,7 +129,7 @@ with tabs[1]:
 
     
   status_plot = alt.Chart(st.session_state.df).mark_bar().encode(
-    x="Date:N",
+    x="Date:T",
     y="sum(Status):Q",
     xOffset="Status:N",
     color="Status:N"
