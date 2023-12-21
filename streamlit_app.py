@@ -125,3 +125,13 @@ with tabs[1]:
                                             ),
                              })
   st.write(f'Number of tickets: `{len(st.session_state.df)}`')
+
+    
+  status_plot = alt.Chart(st.session_state.df).mark_bar().encode(
+    x="Date:N",
+    y="sum(Status):Q",
+    xOffset="Status:N",
+    color="Status:N"
+  )
+  st.altair_chart(status_plot)
+  
