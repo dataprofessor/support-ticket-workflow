@@ -127,12 +127,13 @@ with tabs[1]:
                              })
   st.write(f'Number of tickets: `{len(st.session_state.df)}`')
 
-    
-  status_plot = alt.Chart(st.session_state.df).mark_bar().encode(
-    x="Date:T",
-    y="sum(Status):Q",
-    xOffset="Status:N",
-    color="Status:N"
+  # Group by Date and Status, then count occurrences
+  df_grouped = st.session_state.df.groupby(['Date', 'Status']).size().reset_index(name='Count')
+  # Create grouped bar chart with Altair
+  status_plot = alt.Chart(df_grouped).mark_bar().encode(
+      x='Date:T',
+      y='Count:Q',
+      color='Status:N'
   )
   st.altair_chart(status_plot)
   
