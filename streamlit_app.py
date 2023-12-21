@@ -132,7 +132,7 @@ with tabs[1]:
   df_status['Date'] = pd.to_datetime(df_status['Date'])
     
   # Extract month and year from the "Date" column
-  df_status['Month'] = df_status['Date'].dt.to_period('M')
+  df_status['Month'] = df_status['Date'].dt.strftime('%b-%Y')
     
   # Group by Month and Status, then count occurrences
   df_status_grouped = df_status.groupby(['Month', 'Status']).size().reset_index(name='Count')
