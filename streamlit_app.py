@@ -107,7 +107,7 @@ with tabs[1]:
   # Status plot
   col = st.columns((1,4,4))
   with col[0]:
-      st.metric(label='Hours until first response', value=8, delta=-1)
+      st.metric(label='First response', value=8, delta=-1)
   with col[1]:
       status_plot = alt.Chart(st.session_state.df).mark_bar().encode(
           x='month(Date):O',
