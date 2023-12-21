@@ -144,7 +144,7 @@ with tabs[1]:
   #      column='Status:N',
   #      color='Status:N'
   #)
-  status_plot = alt.Chart(grouped_data).mark_bar().encode(
+  status_plot = alt.Chart(df_status_grouped).mark_bar().encode(
                     x=alt.X('Month:T', axis=alt.Axis(title='Month')),
                     y='Count:Q',
                     color='Status:N',
