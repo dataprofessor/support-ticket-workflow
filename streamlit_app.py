@@ -128,11 +128,20 @@ with tabs[1]:
   st.write(f'Number of tickets: `{len(st.session_state.df)}`')
 
   # Status plot
-  status_plot = alt.Chart(st.session_state.df).mark_bar().encode(
-      x='month(Date):O',
-      y='count():Q',
-      xOffset='Status:N',
-      color='Status:N'
-  )
-  st.altair_chart(status_plot)
-  
+  col = st.columns(2)
+  with col[0]:
+      status_plot = alt.Chart(st.session_state.df).mark_bar().encode(
+          x='month(Date):O',
+          y='count():Q',
+          xOffset='Status:N',
+          color='Status:N'
+      )
+      st.altair_chart(status_plot)
+  with col[1]:
+      priority_plot = alt.Chart(st.session_state.df).mark_bar().encode(
+          x='month(Date):O',
+          y='count():Q',
+          xOffset='Priority:N',
+          color='Priority:N'
+      )
+      st.altair_chart(priority_plot)
