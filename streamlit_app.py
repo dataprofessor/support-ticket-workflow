@@ -144,4 +144,5 @@ with tabs[1]:
         color='Status:N'
   )
   st.altair_chart(status_plot)
+  df_status_grouped
   
