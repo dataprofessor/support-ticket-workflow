@@ -81,7 +81,7 @@ tabs = st.tabs(['Write a ticket', 'Ticket Status and Analytics'])
 recent_ticket_number = int(max(st.session_state.df.ID).split('-')[1])
 
 with tabs[0]:
-  st.warning('File a new ticket')
+  #st.warning('File a new ticket')
 
   with st.form('addition'):
     issue = st.text_area('Description of issue')
@@ -101,9 +101,10 @@ with tabs[0]:
       st.session_state.df = pd.concat([st.session_state.df, df2], axis=0).sort_values(by='ID', ascending=False)
 
 with tabs[1]:
-  st.warning('Check the status of your ticket')
+  #st.warning('Check the status of your ticket')
 
   # Status plot
+  st.subheader('Support Ticket Analytics')
   col = st.columns((1,4,4))
   with col[0]:
       st.metric(label='First response (hr)', value=5.2, delta=-1.5)
@@ -123,7 +124,8 @@ with tabs[1]:
           color='Priority:N'
       ).properties(height=200)
       st.altair_chart(priority_plot, use_container_width=True, theme='streamlit')
-    
+
+  st.subheader('Support Ticket Status')
   st.data_editor(st.session_state.df, use_container_width=True, hide_index=True, height=212,
                 column_config={'Status': st.column_config.SelectboxColumn(
                                             'Status',
