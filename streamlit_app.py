@@ -3,6 +3,8 @@ import numpy as np
 import pandas as pd
 from datetime import datetime, timedelta
 
+# Page title
+st.set_page_config(page_title='Support Ticket Workflow', page_icon='🎫', layout='wide')
 st.title('🎫 Support Ticket Workflow')
 st.info('To write a ticket, fill out the form below. Check status or review ticketing analytics using the tabs below.')
 
