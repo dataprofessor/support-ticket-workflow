@@ -127,13 +127,21 @@ with tabs[1]:
                              })
   st.write(f'Number of tickets: `{len(st.session_state.df)}`')
 
-  # Group by Date and Status, then count occurrences
-  df_grouped = st.session_state.df.groupby(['Date', 'Status']).size().reset_index(name='Count')
+  df_status = st.session_state.df
+  # Convert "Date" to datetime format
+  df_status['Date'] = pd.to_datetime(df_status['Date'])
+    
+  # Extract month and year from the "Date" column
+  df_status['Month'] = df_status['Date'].dt.to_period('M')
+    
+  # Group by Month and Status, then count occurrences
+  df_status_grouped = df_status.groupby(['Month', 'Status']).size().reset_index(name='Count')
+    
   # Create grouped bar chart with Altair
-  status_plot = alt.Chart(df_grouped).mark_bar().encode(
-      x='Date:T',
-      y='Count:Q',
-      color='Status:N'
+  status_plot = alt.Chart(df_status_grouped).mark_bar().encode(
+        x='Month:T',
+        y='Count:Q',
+        color='Status:N'
   )
   st.altair_chart(status_plot)
   
