@@ -99,7 +99,7 @@ with tabs[0]:
                           }])
       st.write('Ticket submitted!')
       st.dataframe(df2, use_container_width=True, hide_index=True)
-      st.session_state.df = pd.concat([st.session_state.df, df2], axis=0).sort_values(by='Date', ascending=False)
+      st.session_state.df = pd.concat([st.session_state.df, df2], axis=0).sort_values(by='ID', ascending=False)
 
 with tabs[1]:
   st.write('Check the status of your ticket')
