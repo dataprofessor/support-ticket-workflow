@@ -144,13 +144,12 @@ with tabs[1]:
   #      column='Status:N',
   #      color='Status:N'
   #)
-  status_plot = alt.Chart(df_status_grouped).mark_bar().encode(
-                    x=alt.X('Month:T', axis=alt.Axis(title='Month')),
-                    y='Count:Q',
-                    color='Status:N',
-                    column='Status:N',
-                    tooltip=['Month', 'Status', 'Count'] 
-                 )
+  status_plot = alt.Chart(st.session_state.df).mark_bar().encode(
+      x='month(Date):O',
+      y='count():Q',
+      color='Status:N'
+  )
+  
   st.altair_chart(status_plot)
   df_status_grouped
   
