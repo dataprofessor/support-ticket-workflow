@@ -114,7 +114,7 @@ with tabs[1]:
   with status_col[1]:
       st.write(f'No. of tickets: `{len(st.session_state.df)}`')
 
-  st.data_editor(st.session_state.df, use_container_width=True, hide_index=True, height=212, on_change=sort_df, 
+  st.session_state.df = st.data_editor(st.session_state.df, use_container_width=True, hide_index=True, height=212, on_change=sort_df, 
                 column_config={'Status': st.column_config.SelectboxColumn(
                                             'Status',
                                             help='Ticket status',
