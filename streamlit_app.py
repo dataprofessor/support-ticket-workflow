@@ -153,7 +153,7 @@ with tabs[1]:
       priority_plot = alt.Chart(st.session_state.df).mark_arc().encode(
                           theta="count():Q",
                           color="Priority:N"
-                      )
+                      ).configure_legend(orient='bottom', titleFontSize=16, labelFontSize=14, titlePadding=0)
       #priority_plot = alt.Chart(st.session_state.df).mark_bar().encode(
       #    x='month(Date):O',
       #    y='count():Q',
