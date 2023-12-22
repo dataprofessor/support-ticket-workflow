@@ -65,7 +65,7 @@ def generate_random_dates(start_date, end_date, id_values):
 data = {'Issue': issue_list,
         'Status': np.random.choice(['Open', 'In Progress', 'Closed'], size=100),
         'Priority': np.random.choice(['High', 'Medium', 'Low'], size=100),
-        'Date': generate_random_dates(start_date, end_date, id_values)
+        'Date Submitted': generate_random_dates(start_date, end_date, id_values)
     }
 df = pd.DataFrame(data)
 df.insert(0, 'ID', id_values)
@@ -99,7 +99,7 @@ with tabs[0]:
                            'Issue': issue,
                            'Status': 'Open',
                            'Priority': priority,
-                           'Date': today_date
+                           'Date Submitted': today_date
                           }])
       st.write('Ticket submitted!')
       st.dataframe(df2, use_container_width=True, hide_index=True)
