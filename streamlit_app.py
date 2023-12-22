@@ -75,6 +75,11 @@ df = df.sort_values(by='ID', ascending=False)
 if 'df' not in st.session_state:
     st.session_state.df = df
 
+# Sort dataframe
+def sort_df():
+    st.session_state.df = st.session_state.df.sort_values(by=['ID', 'Status'], ascending=False)
+
+
 # Tabs for app layout
 tabs = st.tabs(['Write a ticket', 'Ticket Status and Analytics'])
 
@@ -108,7 +113,7 @@ with tabs[1]:
       st.subheader('Support Ticket Status')
   with status_col[1]:
       st.write(f'No. of tickets: `{len(st.session_state.df)}`')
-      
+
   st.data_editor(st.session_state.df, use_container_width=True, hide_index=True, height=212,
                 column_config={'Status': st.column_config.SelectboxColumn(
                                             'Status',
