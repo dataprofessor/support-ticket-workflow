@@ -69,7 +69,7 @@ data = {'Issue': issue_list,
     }
 df = pd.DataFrame(data)
 df.insert(0, 'ID', id_values)
-df = df.sort_values(by='ID', ascending=False)
+df = df.sort_values(by='Status', ascending=False)
 
 ## Create DataFrame
 if 'df' not in st.session_state:
@@ -77,7 +77,7 @@ if 'df' not in st.session_state:
 
 # Sort dataframe
 def sort_df():
-    st.session_state.df = st.session_state.df.sort_values(by=['ID', 'Status'], ascending=False)
+    st.session_state.df = st.session_state.df.sort_values(by='Status', ascending=False)
 
 
 # Tabs for app layout
@@ -103,7 +103,7 @@ with tabs[0]:
                           }])
       st.write('Ticket submitted!')
       st.dataframe(df2, use_container_width=True, hide_index=True)
-      st.session_state.df = pd.concat([st.session_state.df, df2], axis=0).sort_values(by=['Status', 'ID'], ascending=False)
+      st.session_state.df = pd.concat([st.session_state.df, df2], axis=0).sort_values(by='Status', ascending=False)
 
 with tabs[1]:
   #st.warning('Check the status of your ticket')
