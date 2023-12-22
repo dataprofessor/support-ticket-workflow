@@ -135,25 +135,30 @@ with tabs[1]:
   # Status plot
   st.subheader('Support Ticket Analytics')
   col = st.columns((1,1,1,4,2))
+    
   with col[0]:
       st.metric(label='First response (hr)', value=5.2, delta=-1.5)
+      
   with col[1]:
       st.metric(label='No. of tickets in queue', value=10, delta='')
+      
   with col[2]:
       st.metric(label='Avg. ticket resolution time (hr)', value=16, delta='')
+      
   with col[3]:
       status_plot = alt.Chart(st.session_state.df).mark_bar().encode(
           x='month(Date):O',
           y='count():Q',
           xOffset='Status:N',
           color='Status:N'
-      ).properties(height=200).configure_legend(orient='bottom', titleFontSize=14, labelFontSize=14, titlePadding=5)
+      ).properties(height=300).configure_legend(orient='bottom', titleFontSize=14, labelFontSize=14, titlePadding=5)
       st.altair_chart(status_plot, use_container_width=True, theme='streamlit')
+      
   with col[4]:
       priority_plot = alt.Chart(st.session_state.df).mark_arc().encode(
                           theta="count():Q",
                           color="Priority:N"
-                      ).configure_legend(orient='bottom', titleFontSize=14, labelFontSize=14, titlePadding=5)
+                      ).properties(height=300).configure_legend(orient='bottom', titleFontSize=14, labelFontSize=14, titlePadding=5)
       #priority_plot = alt.Chart(st.session_state.df).mark_bar().encode(
       #    x='month(Date):O',
       #    y='count():Q',
@@ -161,7 +166,3 @@ with tabs[1]:
       #    color='Priority:N'
       #).properties(height=200)
       st.altair_chart(priority_plot, use_container_width=True, theme='streamlit')
-
-
-
-
