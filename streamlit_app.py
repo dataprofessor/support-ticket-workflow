@@ -103,28 +103,6 @@ with tabs[0]:
 with tabs[1]:
   #st.warning('Check the status of your ticket')
 
-  # Status plot
-  st.subheader('Support Ticket Analytics')
-  col = st.columns((1,4,4))
-  with col[0]:
-      st.metric(label='First response (hr)', value=5.2, delta=-1.5)
-  with col[1]:
-      status_plot = alt.Chart(st.session_state.df).mark_bar().encode(
-          x='month(Date):O',
-          y='count():Q',
-          xOffset='Status:N',
-          color='Status:N'
-      ).properties(height=200)
-      st.altair_chart(status_plot, use_container_width=True, theme='streamlit')
-  with col[2]:
-      priority_plot = alt.Chart(st.session_state.df).mark_bar().encode(
-          x='month(Date):O',
-          y='count():Q',
-          xOffset='Priority:N',
-          color='Priority:N'
-      ).properties(height=200)
-      st.altair_chart(priority_plot, use_container_width=True, theme='streamlit')
-
   status_col = st.columns((5,1))
   with status_col[0]:
       st.subheader('Support Ticket Status')
@@ -153,5 +131,29 @@ with tabs[1]:
                                             required=True,
                                             ),
                              })
+    
+  # Status plot
+  st.subheader('Support Ticket Analytics')
+  col = st.columns((1,4,4))
+  with col[0]:
+      st.metric(label='First response (hr)', value=5.2, delta=-1.5)
+  with col[1]:
+      status_plot = alt.Chart(st.session_state.df).mark_bar().encode(
+          x='month(Date):O',
+          y='count():Q',
+          xOffset='Status:N',
+          color='Status:N'
+      ).properties(height=200)
+      st.altair_chart(status_plot, use_container_width=True, theme='streamlit')
+  with col[2]:
+      priority_plot = alt.Chart(st.session_state.df).mark_bar().encode(
+          x='month(Date):O',
+          y='count():Q',
+          xOffset='Priority:N',
+          color='Priority:N'
+      ).properties(height=200)
+      st.altair_chart(priority_plot, use_container_width=True, theme='streamlit')
+
+
 
 
