@@ -147,13 +147,13 @@ with tabs[1]:
           y='count():Q',
           xOffset='Status:N',
           color='Status:N'
-      ).properties(height=200)
+      ).properties(height=200).configure_legend(orient='bottom', titleFontSize=14, labelFontSize=14, titlePadding=5)
       st.altair_chart(status_plot, use_container_width=True, theme='streamlit')
   with col[4]:
       priority_plot = alt.Chart(st.session_state.df).mark_arc().encode(
                           theta="count():Q",
                           color="Priority:N"
-                      ).configure_legend(orient='bottom', titleFontSize=16, labelFontSize=14, titlePadding=0)
+                      ).configure_legend(orient='bottom', titleFontSize=14, labelFontSize=14, titlePadding=5)
       #priority_plot = alt.Chart(st.session_state.df).mark_bar().encode(
       #    x='month(Date):O',
       #    y='count():Q',
