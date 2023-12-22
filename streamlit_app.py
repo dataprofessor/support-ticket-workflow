@@ -150,7 +150,7 @@ with tabs[1]:
       ).properties(height=200)
       st.altair_chart(status_plot, use_container_width=True, theme='streamlit')
   with col[4]:
-      priority_plot = alt.Chart(source).mark_arc().encode(
+      priority_plot = alt.Chart(st.session_state.df).mark_arc().encode(
                           theta="count():Q",
                           color="Priority:N"
                       )
