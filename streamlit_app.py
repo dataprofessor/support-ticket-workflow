@@ -150,12 +150,16 @@ with tabs[1]:
       ).properties(height=200)
       st.altair_chart(status_plot, use_container_width=True, theme='streamlit')
   with col[4]:
-      priority_plot = alt.Chart(st.session_state.df).mark_bar().encode(
-          x='month(Date):O',
-          y='count():Q',
-          xOffset='Priority:N',
-          color='Priority:N'
-      ).properties(height=200)
+      priority_plot = alt.Chart(source).mark_arc().encode(
+                          theta="count():Q",
+                          color="Priority:N"
+                      )
+      #priority_plot = alt.Chart(st.session_state.df).mark_bar().encode(
+      #    x='month(Date):O',
+      #    y='count():Q',
+      #    xOffset='Priority:N',
+      #    color='Priority:N'
+      #).properties(height=200)
       st.altair_chart(priority_plot, use_container_width=True, theme='streamlit')
 
 
