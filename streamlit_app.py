@@ -154,7 +154,7 @@ with tabs[1]:
       priority_plot = alt.Chart(st.session_state.df).mark_arc().encode(
                           theta="count():Q",
                           color="Priority:N"
-                      ).properties(height=300).configure_legend(orient='bottom', titleFontSize=14, labelFontSize=14, titlePadding=5)
+                      ).properties(title='Current ticket priority', height=300).configure_legend(orient='bottom', titleFontSize=14, labelFontSize=14, titlePadding=5)
       #priority_plot = alt.Chart(st.session_state.df).mark_bar().encode(
       #    x='month(Date):O',
       #    y='count():Q',
