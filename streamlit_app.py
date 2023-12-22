@@ -147,7 +147,7 @@ with tabs[1]:
           y='count():Q',
           xOffset='Status:N',
           # color='Status:N'
-          color = alt.Color('Status:N', legend=alt.Legend(title="Ticket status in the past 6 months") )
+          color = 'Status:N'
       ).properties(height=300).configure_legend(orient='bottom', titleFontSize=14, labelFontSize=14, titlePadding=5)
       st.altair_chart(status_plot, use_container_width=True, theme='streamlit')
       
