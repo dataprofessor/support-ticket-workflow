@@ -148,7 +148,7 @@ with tabs[1]:
       
   with col[1]:
       status_plot = alt.Chart(st.session_state.df).mark_bar().encode(
-          x='month(Date):O',
+          x='month(Date Submitted):O',
           y='count():Q',
           xOffset='Status:N',
           color = 'Status:N'
