@@ -146,7 +146,6 @@ with tabs[1]:
           x='month(Date):O',
           y='count():Q',
           xOffset='Status:N',
-          # color='Status:N'
           color = 'Status:N'
       ).properties(height=300).configure_legend(orient='bottom', titleFontSize=14, labelFontSize=14, titlePadding=5)
       st.altair_chart(status_plot, use_container_width=True, theme='streamlit')
