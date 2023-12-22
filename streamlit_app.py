@@ -134,18 +134,14 @@ with tabs[1]:
     
   # Status plot
   st.subheader('Support Ticket Analytics')
-  col = st.columns((1,1,1,4,2))
+  col = st.columns((1,3,1))
     
   with col[0]:
       st.metric(label='First response (hr)', value=5.2, delta=-1.5)
-      
-  with col[1]:
       st.metric(label='No. of tickets in queue', value=10, delta='')
-      
-  with col[2]:
       st.metric(label='Avg. ticket resolution time (hr)', value=16, delta='')
       
-  with col[3]:
+  with col[1]:
       status_plot = alt.Chart(st.session_state.df).mark_bar().encode(
           x='month(Date):O',
           y='count():Q',
