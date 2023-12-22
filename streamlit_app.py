@@ -77,7 +77,7 @@ if 'df' not in st.session_state:
 
 # Sort dataframe
 def sort_df():
-    st.session_state.df = st.session_state.df.sort_values(by=['Status', 'ID'], ascending=[False, False])
+    st.session_state.df = st.session_state['df'].sort_values(by=['Status', 'ID'], ascending=[False, False])
 
 
 # Tabs for app layout
