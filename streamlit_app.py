@@ -76,9 +76,9 @@ if 'df' not in st.session_state:
     st.session_state.df = df
 
 # Sort dataframe
-def sort_df(edited_df):
+def sort_df(st.session_state.df):
     # st.session_state.df = st.session_state.df.sort_values(by=['Status', 'ID'], ascending=[False, False])
-    st.session_state.df = edited_df.sort_values(by=['Status', 'ID'], ascending=[False, False])
+    st.session_state.df = st.session_state.df.sort_values(by=['Status', 'ID'], ascending=[False, False])
 
 
 # Tabs for app layout
@@ -117,7 +117,7 @@ with tabs[1]:
 
 
   # st.session_state.df = st.data_editor(st.session_state.df, use_container_width=True, hide_index=True, height=212, on_change=sort_df, 
-  edited_df = st.data_editor(st.session_state.df, use_container_width=True, hide_index=True, height=212, on_change=sort_df, args=(st.session_state.df,),
+  edited_df = st.data_editor(st.session_state.df, use_container_width=True, hide_index=True, height=212, on_change=sort_df, args=(st.session_state.df),
                 column_config={'Status': st.column_config.SelectboxColumn(
                                             'Status',
                                             help='Ticket status',
