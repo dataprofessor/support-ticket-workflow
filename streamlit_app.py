@@ -78,8 +78,8 @@ if 'df' not in st.session_state:
 # Sort dataframe
 def sort_df():
     # st.session_state.df = st.session_state.df.sort_values(by=['Status', 'ID'], ascending=[False, False])
-    st.session_state.df = st.session_state.edited_dataframe
-
+    st.session_state.df = st.session_state.df.sort_values(by=['Status', 'ID'], ascending=[False, False])
+    st.write(st.session_state.edited_dataframe)
 
 # Tabs for app layout
 tabs = st.tabs(['Write a ticket', 'Ticket Status and Analytics'])
