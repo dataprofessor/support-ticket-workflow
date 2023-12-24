@@ -139,7 +139,7 @@ with tabs[1]:
                                             required=True,
                                             ),
                              })
-  st.button('Update DataFrame', on_click=sort_df)
+  st.button('🔄 Update DataFrame', on_click=sort_df)
   
   # Status plot
   st.subheader('Support Ticket Analytics')
