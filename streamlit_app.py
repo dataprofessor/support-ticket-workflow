@@ -118,9 +118,6 @@ with tabs[1]:
   st.info('👇 Update Ticket **Status** or **Priority** and see how plots are updated in real-time!')
 
   # st.session_state.df = st.data_editor(st.session_state.df, use_container_width=True, hide_index=True, height=212, on_change=sort_df, 
-  df1 = st.session_state.df
-  st.dataframe(df1.style.background_gradient(subset=['Status']))
-    
   edited_df = st.data_editor(st.session_state.df, use_container_width=True, hide_index=True, height=212,
                 column_config={'Status': st.column_config.SelectboxColumn(
                                             'Status',
