@@ -117,7 +117,6 @@ with tabs[1]:
 
 
   # st.session_state.df = st.data_editor(st.session_state.df, use_container_width=True, hide_index=True, height=212, on_change=sort_df, 
-  st.button('Save', on_click=sort_df)
   edited_df = st.data_editor(st.session_state.df, use_container_width=True, hide_index=True, height=212,
                 column_config={'Status': st.column_config.SelectboxColumn(
                                             'Status',
@@ -140,7 +139,8 @@ with tabs[1]:
                                             required=True,
                                             ),
                              })
-    
+  st.button('Update DataFrame', on_click=sort_df)
+  
   # Status plot
   st.subheader('Support Ticket Analytics')
   col = st.columns((1,3,1))
