@@ -117,7 +117,7 @@ with tabs[1]:
 
 
   # st.session_state.df = st.data_editor(st.session_state.df, use_container_width=True, hide_index=True, height=212, on_change=sort_df, 
-  edited_df = st.data_editor(st.session_state.df, use_container_width=True, hide_index=True, height=212, on_change=sort_df),
+  st.session_state.df = st.data_editor(st.session_state.df, use_container_width=True, hide_index=True, height=212, on_change=sort_df),
                 column_config={'Status': st.column_config.SelectboxColumn(
                                             'Status',
                                             help='Ticket status',
