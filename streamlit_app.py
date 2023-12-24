@@ -142,8 +142,10 @@ with tabs[1]:
   col = st.columns((1,3,1))
     
   with col[0]:
+      n_tickets_queue = len(st.session_state.df[st.session_state.df.Status=='Open'])
+      
       st.metric(label='First response (hr)', value=5.2, delta=-1.5)
-      st.metric(label='No. of tickets in queue', value=10, delta='')
+      st.metric(label='No. of tickets in queue', value=n_tickets_queue, delta='')
       st.metric(label='Avg. ticket resolution time (hr)', value=16, delta='')
       
   with col[1]:
