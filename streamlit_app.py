@@ -77,7 +77,6 @@ if 'df' not in st.session_state:
 
 # Sort dataframe
 def sort_df():
-    # st.session_state.df = st.session_state.df.sort_values(by=['Status', 'ID'], ascending=[False, False])
     st.session_state.df = edited_df.copy().sort_values(by=['Status', 'ID'], ascending=[False, False])
 
 
@@ -87,8 +86,6 @@ tabs = st.tabs(['Write a ticket', 'Ticket Status and Analytics'])
 recent_ticket_number = int(max(st.session_state.df.ID).split('-')[1])
 
 with tabs[0]:
-  #st.warning('File a new ticket')
-
   with st.form('addition'):
     issue = st.text_area('Description of issue')
     priority = st.selectbox('Priority', ['High', 'Medium', 'Low'])
@@ -107,8 +104,6 @@ with tabs[0]:
       st.session_state.df = pd.concat([st.session_state.df, df2], axis=0).sort_values(by=['Status', 'ID'], ascending=[False, False])
 
 with tabs[1]:
-  #st.warning('Check the status of your ticket')
-
   status_col = st.columns((5,1))
   with status_col[0]:
       st.subheader('Support Ticket Status')
@@ -117,7 +112,6 @@ with tabs[1]:
 
   st.info('👇 Update Ticket **Status** or **Priority** and see how plots are updated in real-time!')
 
-  # st.session_state.df = st.data_editor(st.session_state.df, use_container_width=True, hide_index=True, height=212, on_change=sort_df, 
   edited_df = st.data_editor(st.session_state.df, use_container_width=True, hide_index=True, height=212,
                 column_config={'Status': st.column_config.SelectboxColumn(
                                             'Status',
@@ -167,10 +161,4 @@ with tabs[1]:
                           theta="count():Q",
                           color="Priority:N"
                       ).properties(title='Current ticket priority', height=300).configure_legend(orient='bottom', titleFontSize=14, labelFontSize=14, titlePadding=5)
-      #priority_plot = alt.Chart(st.session_state.df).mark_bar().encode(
-      #    x='month(Date):O',
-      #    y='count():Q',
-      #    xOffset='Priority:N',
-      #    color='Priority:N'
-      #).properties(height=200)
       st.altair_chart(priority_plot, use_container_width=True, theme='streamlit')
