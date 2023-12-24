@@ -115,6 +115,7 @@ with tabs[1]:
   with status_col[1]:
       st.write(f'No. of tickets: `{len(st.session_state.df)}`')
 
+  st.info('👇 Update Ticket **Status** or **Priority** and see how plots are updated in real-time!')
 
   # st.session_state.df = st.data_editor(st.session_state.df, use_container_width=True, hide_index=True, height=212, on_change=sort_df, 
   edited_df = st.data_editor(st.session_state.df, use_container_width=True, hide_index=True, height=212,
