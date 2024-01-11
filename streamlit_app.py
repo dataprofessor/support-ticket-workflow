@@ -9,18 +9,6 @@ st.set_page_config(page_title='Support Ticket Workflow', page_icon='🎫')
 st.title('🎫 Support Ticket Workflow')
 st.info('To write a ticket, fill out the form below. Check status or review ticketing analytics using the tabs below.')
 
-# CSS styling
-st.markdown("""
-<style>
-
-[data-testid="block-container"] {
-    padding-top: 1.2rem;
-    padding-bottom: 1.2rem;
-}
-
-</style>
-""", unsafe_allow_html=True)
-
 # Generate data
 ## Set seed for reproducibility
 np.random.seed(42)
