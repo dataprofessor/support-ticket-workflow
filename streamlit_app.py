@@ -9,6 +9,7 @@ st.set_page_config(page_title='Support Ticket Workflow', page_icon='🎫')
 st.title('🎫 Support Ticket Workflow')
 st.info('To write a ticket, fill out the form below. Check status or review ticketing analytics using the tabs below.')
 
+
 # Generate data
 ## Set seed for reproducibility
 np.random.seed(42)
@@ -98,7 +99,9 @@ with tabs[1]:
   with status_col[1]:
       st.write(f'No. of tickets: `{len(st.session_state.df)}`')
 
-  st.info('👇 Update Ticket **Status** or **Priority** and see how plots are updated in real-time!')
+  st.markdown('**Things to try:**')
+  st.info('1️⃣ Update Ticket **Status** or **Priority** and see how plots are updated in real-time!')
+  st.success('2️⃣ Change values in **Status** column from "Open" to either "In Progress" or "Closed", then click on **🔁 Update DataFrame** button')
 
   edited_df = st.data_editor(st.session_state.df, use_container_width=True, hide_index=True, height=212,
                 column_config={'Status': st.column_config.SelectboxColumn(
