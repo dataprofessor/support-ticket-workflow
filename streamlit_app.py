@@ -93,7 +93,7 @@ with tabs[0]:
       st.session_state.df = pd.concat([st.session_state.df, df2], axis=0).sort_values(by=['Status', 'ID'], ascending=[False, False])
 
 with tabs[1]:
-  status_col = st.columns((5,1))
+  status_col = st.columns((3,1))
   with status_col[0]:
       st.subheader('Support Ticket Status')
   with status_col[1]:
