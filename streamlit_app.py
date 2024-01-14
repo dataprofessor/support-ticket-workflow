@@ -101,7 +101,7 @@ with tabs[1]:
 
   st.markdown('**Things to try:**')
   st.info('1️⃣ Update Ticket **Status** or **Priority** and see how plots are updated in real-time!')
-  st.success('2️⃣ Change values in **Status** column from *"Open"* to either *"In Progress"* or *"Closed"*, then click on the **Update DataFrame** button to see the refreshed DataFrame with the sorted **Status** column.')
+  st.success('2️⃣ Change values in **Status** column from *"Open"* to either *"In Progress"* or *"Closed"*, then click on the **Sort DataFrame by the Status column** button to see the refreshed DataFrame with the sorted **Status** column.')
 
   edited_df = st.data_editor(st.session_state.df, use_container_width=True, hide_index=True, height=212,
                 column_config={'Status': st.column_config.SelectboxColumn(
@@ -125,7 +125,7 @@ with tabs[1]:
                                             required=True,
                                             ),
                              })
-  st.button('🔄 Update DataFrame', on_click=sort_df)
+  st.button('🔄 Sort DataFrame by the Status column', on_click=sort_df)
   
   # Status plot
   st.subheader('Support Ticket Analytics')
