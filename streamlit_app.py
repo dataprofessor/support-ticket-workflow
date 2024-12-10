@@ -41,8 +41,8 @@ def generate_issue():
     return np.random.choice(issues)
 
 ## Function to generate random dates
-start_date = datetime(2023, 6, 1)
-end_date = datetime(2023, 12, 20)
+start_date = datetime(2024, 6, 1)
+end_date = datetime(2024, 12, 20)
 id_values = ['TICKET-{}'.format(i) for i in range(1000, 1100)]
 issue_list = [generate_issue() for _ in range(100)]
 
