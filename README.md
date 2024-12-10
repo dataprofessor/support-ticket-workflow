@@ -4,7 +4,7 @@ A **Support Ticket Workflow** demo that allow users to write a ticket as well as
 
 ## Demo App
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://app-starter-kit.streamlit.app/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://support-ticket-workflow.streamlit.app/)
 
 ## GitHub Codespaces
 
