@@ -2,7 +2,7 @@
 
 A **Support Ticket Workflow** demo that allow users to write a ticket as well as check up on the status or review ticketing analytics.
 
-[![image](thumbnail.jpg =350x)](https://www.youtube.com/watch?v=Mf4jpWLq8Rw)
+[![image](thumbnail.jpg)](https://www.youtube.com/watch?v=Mf4jpWLq8Rw)
 
 ## Demo App
 
